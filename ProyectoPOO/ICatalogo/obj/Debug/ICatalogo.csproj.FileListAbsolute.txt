@@ -1,0 +1,12 @@
+C:\Users\crisd\source\repos\ProyectoPOO\ICatalogo\bin\Debug\ICatalogo.exe.config
+C:\Users\crisd\source\repos\ProyectoPOO\ICatalogo\bin\Debug\ICatalogo.exe
+C:\Users\crisd\source\repos\ProyectoPOO\ICatalogo\bin\Debug\ICatalogo.pdb
+C:\Users\crisd\source\repos\ProyectoPOO\ICatalogo\obj\Debug\ICatalogo.csproj.AssemblyReference.cache
+C:\Users\crisd\source\repos\ProyectoPOO\ICatalogo\obj\Debug\ICatalogo.csproj.SuggestedBindingRedirects.cache
+C:\Users\crisd\source\repos\ProyectoPOO\ICatalogo\obj\Debug\ICatalogo.FormPrincipal.resources
+C:\Users\crisd\source\repos\ProyectoPOO\ICatalogo\obj\Debug\ICatalogo.Formulario.resources
+C:\Users\crisd\source\repos\ProyectoPOO\ICatalogo\obj\Debug\ICatalogo.Properties.Resources.resources
+C:\Users\crisd\source\repos\ProyectoPOO\ICatalogo\obj\Debug\ICatalogo.csproj.GenerateResource.cache
+C:\Users\crisd\source\repos\ProyectoPOO\ICatalogo\obj\Debug\ICatalogo.csproj.CoreCompileInputs.cache
+C:\Users\crisd\source\repos\ProyectoPOO\ICatalogo\obj\Debug\ICatalogo.exe
+C:\Users\crisd\source\repos\ProyectoPOO\ICatalogo\obj\Debug\ICatalogo.pdb
