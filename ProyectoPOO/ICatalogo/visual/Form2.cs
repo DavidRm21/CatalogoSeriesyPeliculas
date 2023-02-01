@@ -16,7 +16,6 @@ namespace ICatalogo
         public Formulario()
         {
             InitializeComponent();
-            controller.addInfo();
         }
 
         public TextBox getTitulo() { return this.txtBoxTitulo;  }
