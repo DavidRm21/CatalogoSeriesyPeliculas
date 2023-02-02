@@ -184,6 +184,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormPrincipal";
             this.Text = "Catalogo";
+            this.Load += new System.EventHandler(this.FormPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

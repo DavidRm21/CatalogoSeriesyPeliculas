@@ -7,19 +7,17 @@ namespace ICatalogo
 {
     public partial class FormPrincipal : Form
     {
-        private Service service = new Service();
-        private List<Movie> listMovies;
-        private List<TVShow> listTVShows;
+        private Controller controller;
+        private Service service;
         private int pos = 0;
-        private Formulario formulario;
+        public static String optionSelect = "Peliculas";
 
         public FormPrincipal()
         {
             InitializeComponent();
-            listMovies = service.getMovies();
-            listTVShows= service.getTVShows();
-            cboBox.Text = "Series";
-            btnMore.Visible= false;
+            controller= new Controller();
+            service= new Service();
+            cboBox.Text= optionSelect;
             showDataSerie(pos);
         }
 
@@ -29,11 +27,11 @@ namespace ICatalogo
             pos++;
             if (cboBox.Text == "Peliculas")
             {
-                if (pos >= this.listMovies.Count) { pos = 0; }
+                if (pos >= controller.getMovies().Count) { pos = 0; }
                 showDataMovie(pos); }
             else
             {
-                if (pos >= this.listTVShows.Count) { pos = 0; }
+                if (pos >= controller.getTVShows().Count) { pos = 0; }
                 showDataSerie(pos);
             }
         }
@@ -41,42 +39,67 @@ namespace ICatalogo
         {
             pos--;
             if (cboBox.Text == "Peliculas") {
-                if (pos < 0) { pos = this.listMovies.Count - 1; }
+                if (pos < 0) { pos = controller.getMovies().Count - 1; }
                 showDataMovie(pos);
             }
             else
             {
-                if (pos < 0) { pos = this.listTVShows.Count - 1; }
+                if (pos < 0) { pos = controller.getTVShows().Count - 1; }
                 showDataSerie(pos);
             }
         }
         private void showDataMovie(int pos)
         {
-            labelTitulo.Text = listMovies[pos].getTitle();
-            labelCategoria.Text = listMovies[pos].getGenres();
-            txtBox.Text = listMovies[pos].getSynopsis();
+            labelTitulo.Text = controller.getMovies()[pos].getTitle();
+            labelCategoria.Text = controller.getMovies()[pos].getGenres();
+            txtBox.Text = controller.getMovies()[pos].getSynopsis();
             labelEpisodio.Text = "";
             labelTemporada.Text = "";
-            String root = listMovies[pos].getIcon();
+            String root = controller.getMovies()[pos].getIcon();
             picBox.Image = Image.FromFile(root);
         }
         private void showDataSerie(int pos) 
         {
-            labelTitulo.Text = listTVShows[pos].getTitle();
-            labelCategoria.Text = listTVShows[pos].getGenres();
-            labelEpisodio.Text = listTVShows[pos].getEpisode();
-            labelTemporada.Text = listTVShows[pos].getSeason();
-            txtBox.Text = listTVShows[pos].getSynopsis();
-            String root = listTVShows[pos].getIcon();
+            labelTitulo.Text = controller.getTVShows()[pos].getTitle();
+            labelCategoria.Text = controller.getTVShows()[pos].getGenres();
+            labelEpisodio.Text = controller.getTVShows()[pos].getEpisode();
+            labelTemporada.Text = controller.getTVShows()[pos].getSeason();
+            txtBox.Text = controller.getTVShows()[pos].getSynopsis();
+            String root = controller.getTVShows()[pos].getIcon();
             picBox.Image = Image.FromFile(root);
         }
-
-        
-        public String getCboBoxOption() { return this.cboBox.Text ; }
-
         private void btnMore_Click(object sender, EventArgs e)
         {
-            formulario = new Formulario();
+            optionSelect = cboBox.Text;
+            Formulario formulario= new Formulario();
+            formulario.Show();
+            this.Hide();
+        }
+        
+        public ComboBox GetComboBox() { return this.cboBox; }
+
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+            int pos = 0;
+            if (cboBox.Text == "Peliculas")
+            {
+                labelTitulo.Text = controller.getMovies()[pos].getTitle();
+                labelCategoria.Text = controller.getMovies()[pos].getGenres();
+                txtBox.Text = controller.getMovies()[pos].getSynopsis();
+                labelEpisodio.Text = "";
+                labelTemporada.Text = "";
+                String root = controller.getMovies()[pos].getIcon();
+                picBox.Image = Image.FromFile(root);
+            }
+            else {
+                labelTitulo.Text = controller.getTVShows()[pos].getTitle();
+                labelCategoria.Text = controller.getTVShows()[pos].getGenres();
+                labelEpisodio.Text = controller.getTVShows()[pos].getEpisode();
+                labelTemporada.Text = controller.getTVShows()[pos].getSeason();
+                txtBox.Text = controller.getTVShows()[pos].getSynopsis();
+                String root = controller.getTVShows()[pos].getIcon();
+                picBox.Image = Image.FromFile(root);
+            }
         }
     }
 }

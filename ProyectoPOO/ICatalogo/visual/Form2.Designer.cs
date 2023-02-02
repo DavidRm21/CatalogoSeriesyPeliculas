@@ -43,12 +43,14 @@
             this.txtBoxTemporadas = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.labelHead = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
@@ -177,12 +179,18 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(373, 540);
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(11, 17);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(60, 57);
             this.button1.TabIndex = 8;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Text = "<";
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // labelHead
@@ -196,12 +204,24 @@
             this.labelHead.TabIndex = 0;
             this.labelHead.Text = "...";
             // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.White;
+            this.btnAdd.Location = new System.Drawing.Point(593, 142);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(106, 41);
+            this.btnAdd.TabIndex = 8;
+            this.btnAdd.Text = "Agregar";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // Formulario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(613, 583);
-            this.Controls.Add(this.button1);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(733, 583);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtBoxTemporadas);
             this.Controls.Add(this.txtBoxEpisodios);
             this.Controls.Add(this.txtBoxGenero);
@@ -236,5 +256,6 @@
         private System.Windows.Forms.TextBox txtBoxTemporadas;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label labelHead;
+        private System.Windows.Forms.Button btnAdd;
     }
 }
